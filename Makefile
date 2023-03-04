@@ -1,2 +1,2 @@
 main: main.c
-	gcc -o main main.c app/*.c io/*.c modelo/*.c
+	gcc -o main main.c util/*.c io/*.c app/*.c

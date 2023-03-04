@@ -30,11 +30,11 @@ lista *crear_lista(size_t talla_valores)
     return l;
 }
 
-size_t obtener_talla_valores(lista *l){
+size_t obtener_talla_valores(const lista *l){
     return l->talla_valores;
 }
 
-nodo *nuevo_nodo(lista *l, void *val)
+nodo *nuevo_nodo(const lista *l, void *val)
 {
     nodo *n = malloc(sizeof(nodo));
     n->v = malloc(l->talla_valores);
@@ -64,7 +64,7 @@ void agregar_a_lista(lista *l, void *val)
     }
 }
 
-iter_lista *iterar_lista(lista *lista)
+iter_lista *iterar_lista(const lista *lista)
 {
     iter_lista *iter = malloc(sizeof(iter_lista));
     iter->n = lista->prim;

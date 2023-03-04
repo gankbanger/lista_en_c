@@ -1,8 +1,8 @@
 #ifndef __LISTA_PACIENTE_H
 #define __LISTA_PACIENTE_H
 
-#include "lista.h"
-#include "../modelo/paciente.h"
+#include "../util/lista.h"
+#include "paciente.h"
 
 /// @brief Crea una lista de pacientes
 /// @return la lista de pacientes

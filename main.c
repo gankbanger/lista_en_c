@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include "app/lista.h"
+#include "util/lista.h"
 #include "app/lista_paciente.h"
 #include "io/arch.h"
 #include "io/consola.h"

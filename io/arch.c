@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "arch.h"
-#include "../app/lista.h"
+#include "../util/lista.h"
 
-void grabar_lista(lista *l, const char *nombre_archivo)
+void grabar_lista(const lista *l, const char *nombre_archivo)
 {
     FILE *f = fopen(nombre_archivo, "w");
     if (f == NULL)
@@ -17,7 +17,7 @@ void grabar_lista(lista *l, const char *nombre_archivo)
 
     // ahora si grabamos un registro por cada elemento en la lista
     iter_lista *iter = iterar_lista(l);
-    for (void* val = iter_siguiente(iter); val != NULL; val = iter_siguiente(iter)){
+    for (const void* val = iter_siguiente(iter); val != NULL; val = iter_siguiente(iter)){
         fwrite(val, talla_valores, 1, f);
     }
 

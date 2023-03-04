@@ -17,7 +17,7 @@ lista *crear_lista(size_t talla_de_los_elementos);
 /// @brief regresa la talla de elemetos aceptados por la lista
 /// @param l la lista
 /// @return la talla de los elementos aceptados por la lista
-size_t obtener_talla_valores(lista* l);
+size_t obtener_talla_valores(const lista* l);
 
 /// @brief agrega un elemento a la lista
 /// @param  l la lista
@@ -28,7 +28,7 @@ void agregar_a_lista(lista* l , void* v);
 /// @brief regresa un iterador de la lista
 /// @param l la lista
 /// @return el iterador de la lista
-iter_lista* iterar_lista(lista* l);
+iter_lista* iterar_lista(const lista* l);
 
 /// @brief regresa el elemento en la posición actual del iterador y avanza la posición
 /// @param iter el iterador
