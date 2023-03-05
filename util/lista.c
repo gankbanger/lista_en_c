@@ -16,7 +16,7 @@ typedef struct lista
 
 typedef struct iter_lista
 {
-    nodo *n;
+    nodo *actual;
 } iter_lista;
 
 lista *crear_lista(size_t talla_valores)
@@ -64,21 +64,33 @@ void agregar_a_lista(lista *l, void *val)
     }
 }
 
+void eliminar_primero(lista *l) {
+    if (l->prim != NULL) {
+        nodo * sig = l->prim->sig;
+        free(l->prim);
+        if (sig != NULL) {
+            l->prim = sig;
+        } else {
+            l->ult = NULL;
+        }
+    }
+}
+
 iter_lista *iterar_lista(const lista *lista)
 {
     iter_lista *iter = malloc(sizeof(iter_lista));
-    iter->n = lista->prim;
+    iter->actual = lista->prim;
     return iter;
 }
 
 void *iter_siguiente(iter_lista *iter)
 {
-    if (iter->n == NULL)
+    if (iter->actual == NULL)
     {
         free(iter);
         return NULL;
     }
-    void *valor = iter->n->v;
-    iter->n = iter->n->sig;
+    void *valor = iter->actual->v;
+    iter->actual = iter->actual->sig;
     return valor;
 }

@@ -24,6 +24,9 @@ size_t obtener_talla_valores(const lista* l);
 /// @param  v el elemento
 void agregar_a_lista(lista* l , void* v);
 
+/// @brief elimina el primer elemento de la lista
+/// @param l la lista
+void eliminar_primero(lista* l);
 
 /// @brief regresa un iterador de la lista
 /// @param l la lista

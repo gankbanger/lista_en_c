@@ -23,6 +23,7 @@ void demo_lista_de_ints(lista *l, const char * archivo) {
     printf("#    Demo lista con enteros    #\n");
     printf("################################\n");
 
+    agregar_a_lista(l, &(int){23});
     agregar_a_lista(l, &(int){10});
     agregar_a_lista(l, &(int){20});
     agregar_a_lista(l, &(int){7});
@@ -30,9 +31,14 @@ void demo_lista_de_ints(lista *l, const char * archivo) {
     printf("\nLista de enteros creada en memoria:\n");
     imprimir_lista(l, imprimir_int);
 
+    eliminar_primero(l);
+
+    printf("\nLista de enteros despues de eliminar el primero:\n");
+    imprimir_lista(l, imprimir_int);
+
     printf("\nGrabando la lista de enteros en disco y cargandola de nuevo en memoria...\n");
     grabar_lista(l, archivo);
-    lista *l2 = cargar_lista(archivo);
+    const lista *l2 = cargar_lista(archivo);
 
     printf("\nLista de enteros cargada del disco\n(debería ser igual que la lista creada en memoria):\n");
     imprimir_lista(l2, imprimir_int);
@@ -56,7 +62,7 @@ void demo_lista_de_pacientes(lista *l, const char * archivo) {
 
     printf("\nGrabando la lista de pacientes en disco y cargandola de nuevo en memoria...\n");
     grabar_lista(l, archivo);
-    lista *l2 = cargar_lista(archivo);
+    const lista *l2 = cargar_lista(archivo);
 
     printf("\nLista de pacientes cargada del disco\n(debería ser igual que la lista creada en memoria):\n");
     imprimir_lista(l2, imprimir_paciente);
@@ -79,7 +85,7 @@ void demo_lista_pacientes(lista *l, const char * archivo) {
 
     printf("\nGrabando la lista de pacientes en disco y cargandola de nuevo en memoria...\n");
     grabar_lista(l, archivo);
-    lista *l2 = cargar_lista(archivo);
+    const lista *l2 = cargar_lista(archivo);
 
     printf("\nLista de pacientes cargada del disco\n(debería ser igual que la lista creada en memoria):\n");
     imprimir_lista(l2, imprimir_paciente);
